@@ -4,109 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lalo Dateng | Abriyanto Rizki</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2d3436;
-            --accent: #00cec9;
-            --text: #636e72;
-            --light: #f9f9f9;
+            --primary: #00cec9;
+            --dark: #2d3436;
+            --light: #ffffff;
+            --gray: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light);
-            color: var(--primary);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--gray);
+            overflow-x: hidden;
         }
 
-        header {
+        /* Hero Section */
+        .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, #dfe6e9 100%);
-            padding: 0 20px;
+            padding: 20px;
         }
 
-        .container {
-            max-width: 800px;
+        /* Animasi Muncul */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .brand-name {
-            color: var(--accent);
-            display: block;
+        .hero-content h2 {
             font-size: 1.2rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 300;
-        }
-
-        p.bio {
-            font-size: 1.2rem;
-            color: var(--text);
-            margin: 20px 0 40px;
-        }
-
-        .contact-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: inline-block;
-        }
-
-        .phone-link {
-            text-decoration: none;
             color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
             font-weight: 700;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
             font-size: 1.1rem;
-            transition: color 0.3s;
         }
 
-        .phone-link:hover {
-            color: var(--accent);
+        /* Tombol Modern */
+        .btn-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 206, 201, 0.3);
         }
 
-        footer {
-            padding: 40px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #b2bec3;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <span class="brand-name">Lalo Dateng</span>
-            <h1>Abriyanto Rizki</h1>
-            <p class="bio">Spesialis Kebugaran & Kesehatan Fisik. Membantu Anda mencapai bentuk tubuh ideal dengan pendekatan yang modern dan terukur.</p>
-            
-            <div class="contact-box">
-                <span>Hubungi Saya:</span><br>
-                <a href="tel:087778366335" class="phone-link">087778366335</a>
-            </div>
-        </div>
-    </header>
-
-    <footer>
-        &copy; 2025 Lalo Dateng by Abriyanto Rizki
-    </footer>
-
-</body>
-</html>
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color
